@@ -1,12 +1,11 @@
-extends Node2D
+extends KinematicBody2D
 
 const Movement = preload("res://scripts/player_movement.gd")
-var movement:Movement = Movement.new()
 
+export(int) var speed
+
+var movement:Movement = Movement.new()
 var vel
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
