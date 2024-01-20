@@ -10,7 +10,9 @@ extends Node
 func _ready():
 	pass # Replace with function body.
 
-
+func move(player):
+	player.translate(Vector2(3, 0))
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
