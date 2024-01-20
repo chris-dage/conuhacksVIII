@@ -2,6 +2,8 @@ extends Node2D
 
 const Movement = preload("res://scripts/player_movement.gd")
 var movement:Movement = Movement.new()
+
+var vel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,4 +16,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	movement.move(self)
+	movement.move(self, delta)
