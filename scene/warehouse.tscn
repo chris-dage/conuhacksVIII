@@ -24,6 +24,7 @@ texture = ExtResource( 2 )
 
 [node name="MovementScript" type="Node" parent="KinematicBody2D"]
 script = ExtResource( 3 )
+speed = 3
 
 [node name="InventoryScript" type="Node" parent="KinematicBody2D"]
 script = ExtResource( 4 )
