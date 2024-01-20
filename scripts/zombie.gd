@@ -51,14 +51,14 @@ func update_appearance(direction):
 		# Set appearance for moving down
 		print("Moving down")
 
-# Example: Detect and follow the player
+# Detect and follow the player
 func _process(delta):
 	if player and position.distance_to(player.position) < detection_range:
 		follow_player(player, delta)
 	else:
 		wander()
 
-# New Function: Follow the player
+# Follow the player
 func follow_player(target_player, delta):
 	var direction = (target_player.position - position).normalized()
 	position += direction * speed * delta
