@@ -1,13 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/temp.jpg" type="Texture" id=2]
 
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128.5, 141.5 )
+
 [node name="Scene" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
+speed = 3
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
 scale = Vector2( 0.323077, 0.242857 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 899, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.5, -0.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
 texture = ExtResource( 2 )
