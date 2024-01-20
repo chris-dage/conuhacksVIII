@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "AK47",
+"language": "GDScript",
+"path": "res://scripts/ak47.gd"
+}, {
+"base": "Node",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://scripts/attack.gd"
+}, {
+"base": "Node",
+"class": "Pistol",
+"language": "GDScript",
+"path": "res://scripts/pistol.gd"
+}, {
+"base": "Node",
+"class": "Shotgun",
+"language": "GDScript",
+"path": "res://scripts/shotgun.gd"
+} ]
+_global_script_class_icons={
+"AK47": "",
+"Attack": "",
+"Pistol": "",
+"Shotgun": ""
+}
+
 [application]
 
 config/name="Conuhacks Viii"
