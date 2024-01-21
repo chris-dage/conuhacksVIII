@@ -14,12 +14,17 @@ func move(delta):
 	if Input.is_key_pressed(KEY_D):
 		player.move_and_collide(Vector2(speed, 0))
 		player.facing_direction = Vector2(1, 0)
+		player.get_node("AnimatedSprite").animation = "moveright"
 	elif Input.is_key_pressed(KEY_A):
 		player.move_and_collide(Vector2(-speed, 0))
 		player.facing_direction = Vector2(-1, 0) 
+		player.get_node("AnimatedSprite").animation = "moveleft"
 	elif Input.is_key_pressed(KEY_W):
 		player.move_and_collide(Vector2(0, -speed))
 		player.facing_direction = Vector2(0, -1)
+		player.get_node("AnimatedSprite").animation = "moveup"
 	elif Input.is_key_pressed(KEY_S):
 		player.move_and_collide(Vector2(0, speed))
 		player.facing_direction = Vector2(0, 1)
+		player.get_node("AnimatedSprite").animation = "movedown"
+	
