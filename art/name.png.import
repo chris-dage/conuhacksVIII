@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zombiefront2.png-35030ed0ddfd9bea5d62b0bab34b1b94.stex"
+path="res://.import/name.png-3a1145c674663a9584dcc0618e9c3cac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/zombie/zombiefront2.png"
-dest_files=[ "res://.import/zombiefront2.png-35030ed0ddfd9bea5d62b0bab34b1b94.stex" ]
+source_file="res://art/name.png"
+dest_files=[ "res://.import/name.png-3a1145c674663a9584dcc0618e9c3cac.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
