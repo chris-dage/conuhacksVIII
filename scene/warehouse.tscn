@@ -13,6 +13,7 @@
 extents = Vector2( 30, 31 )
 
 [node name="Scene" type="Node2D"]
+position = Vector2( 0, 1 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 100, 50 )
