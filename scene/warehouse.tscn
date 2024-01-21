@@ -844,6 +844,7 @@ script = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 61 )
 animation = "moveright"
+frame = 3
 playing = true
 
 [node name="ZombieSpawner" type="Node2D" parent="."]

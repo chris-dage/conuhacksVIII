@@ -2,7 +2,7 @@ extends Area2D
 
 var player
 var facing
-var bullet_speed = 7
+var bullet_speed = 9
 # Called when the node enters the scene tree for the first time.
 	
 func fire(fired_position, facing_direction):
