@@ -931,7 +931,8 @@ script = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 61 )
-animation = "moveright_ak"
+animation = "movedown_pistol"
+frame = 3
 playing = true
 
 [node name="ZombieSpawner" type="Node2D" parent="."]
@@ -966,12 +967,18 @@ scale = Vector2( 5, 5 )
 transform = Transform2D( 5, 0, 0, 5, 0, 0 )
 
 [node name="Health" type="Label" parent="UI Canvas"]
-anchor_left = 0.117
-anchor_right = 0.117
+anchor_left = 0.16
+anchor_right = 0.181
 margin_top = 1.0
 margin_right = 40.0
 margin_bottom = 15.0
 
 [node name="Score" type="Label" parent="UI Canvas"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Highscore" type="Label" parent="UI Canvas"]
+anchor_top = 0.02
+anchor_bottom = 0.092
 margin_right = 40.0
 margin_bottom = 14.0
