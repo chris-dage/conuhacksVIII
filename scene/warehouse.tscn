@@ -11,6 +11,7 @@
 extents = Vector2( 128.5, 141.5 )
 
 [node name="Scene" type="Node2D"]
+position = Vector2( 0, 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
