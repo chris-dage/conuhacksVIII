@@ -19,7 +19,6 @@ func _process(delta):
 func spawn():
 	var zombie = Zombie.instance()
 	owner.add_child(zombie)
-	print(position)
 	zombie.get_node("ZombieScript").set_position(position)
 	
 
