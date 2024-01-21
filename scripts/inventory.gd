@@ -3,13 +3,14 @@ extends Node
 var currently_cycled_weapon = 0
 var weapons:Array = [
 	"pistol",
-	"ak",
-	"shotgun"
+	"ak"
 ]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
+	var player = get_parent()
+	player.equipped_weapon = weapons[currently_cycled_weapon]
 
 func _process(delta):
 	if Input.is_action_just_pressed("cycle_inventory"):

@@ -38,7 +38,7 @@ func take_damage():
 func die():
 	zombie.queue_free()
 	player.score += 10
-	print(player.score)
+	player.get_node("../UI Canvas").get_node("Score").text = "Score: " + String(player.score)
 	
 func set_position(spawn_position):
 	zombie.position = spawn_position

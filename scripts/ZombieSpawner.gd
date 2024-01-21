@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_elapsed += delta
-	if time_elapsed > 3:
+	if time_elapsed > 5:
 		spawn()
 		time_elapsed = 0
 

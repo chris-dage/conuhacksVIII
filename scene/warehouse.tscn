@@ -1,9 +1,11 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/floortiles/floor_tile_center.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player_movement.gd" type="Script" id=3]
 [ext_resource path="res://scripts/inventory.gd" type="Script" id=4]
+[ext_resource path="res://art/sprites/player/spritesheets/ak_down_sheet.png" type="Texture" id=5]
+[ext_resource path="res://art/sprites/player/spritesheets/ak_up_sheet.png" type="Texture" id=6]
 [ext_resource path="res://art/floortiles/floor_tile_rightbottomedge.png" type="Texture" id=7]
 [ext_resource path="res://art/floortiles/floor_tile_leftbottomedge.png" type="Texture" id=8]
 [ext_resource path="res://art/floortiles/floor_tile_leftedge.png" type="Texture" id=9]
@@ -25,6 +27,8 @@
 [ext_resource path="res://art/sprites/player/spritesheets/move_left_sheet.png" type="Texture" id=25]
 [ext_resource path="res://art/sprites/player/spritesheets/move_right_sheet.png" type="Texture" id=26]
 [ext_resource path="res://art/sprites/player/spritesheets/move_up_sheet.png" type="Texture" id=27]
+[ext_resource path="res://art/sprites/player/spritesheets/ak_left_sheet.png" type="Texture" id=28]
+[ext_resource path="res://art/sprites/player/spritesheets/ak_right_sheet.png" type="Texture" id=29]
 [ext_resource path="res://scripts/ZombieSpawner.gd" type="Script" id=31]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
@@ -382,6 +386,22 @@ points = PoolVector2Array( 0, 0, 0, 32, 32, 32, 0, 32 )
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 10, 14 )
 
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=57]
 atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 32, 32 )
@@ -396,6 +416,22 @@ region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 10 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 28 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 28 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 28 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=62]
@@ -414,6 +450,22 @@ region = Rect2( 64, 0, 32, 32 )
 atlas = ExtResource( 25 )
 region = Rect2( 96, 0, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 29 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 29 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 29 )
+region = Rect2( 96, 0, 32, 32 )
+
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 26 )
 region = Rect2( 0, 0, 32, 32 )
@@ -428,6 +480,22 @@ region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 26 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 6 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=70]
@@ -453,24 +521,44 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
+"loop": true,
+"name": "movedown_ak",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
 "loop": true,
-"name": "movedown",
+"name": "movedown_pistol",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ) ],
+"loop": true,
+"name": "moveleft_ak",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
 "loop": true,
-"name": "moveleft",
+"name": "moveleft_pistol",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ) ],
+"loop": true,
+"name": "moveright_ak",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
-"name": "moveright",
+"name": "moveright_pistol",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ) ],
+"loop": true,
+"name": "moveup_ak",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
 "loop": true,
-"name": "moveup",
+"name": "moveup_pistol",
 "speed": 5.0
 } ]
 
@@ -843,8 +931,7 @@ script = ExtResource( 24 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 61 )
-animation = "moveright"
-frame = 3
+animation = "moveright_ak"
 playing = true
 
 [node name="ZombieSpawner" type="Node2D" parent="."]
@@ -874,6 +961,17 @@ format = 1
 tile_data = PoolIntArray( 65537, 10, 0, 65555, 3, 0, 65566, 5, 0, 65567, 7, 0, 131086, 8, 0, 131091, 0, 0, 131097, 8, 0, 131102, 6, 0, 131103, 4, 0, 196617, 11, 0, 196622, 9, 0, 196633, 9, 0, 196634, 10, 0, 196639, 12, 0, 262146, 5, 0, 262147, 7, 0, 262159, 12, 0, 327681, 12, 0, 327682, 6, 0, 327683, 4, 0, 327699, 1, 0, 458761, 3, 0, 458779, 8, 0, 524296, 10, 0, 524297, 0, 0, 524304, 5, 0, 524305, 7, 0, 524315, 9, 0, 524319, 10, 0, 589825, 3, 0, 589839, 10, 0, 589840, 6, 0, 589841, 4, 0, 655361, 0, 0, 655380, 11, 0, 655383, 3, 0, 720900, 13, 0, 720919, 0, 0, 851981, 1, 0, 917533, 1, 0, 983044, 3, 0, 983058, 12, 0, 983064, 13, 0, 1048580, 0, 0, 1048586, 8, 0, 1114122, 9, 0, 1114132, 5, 0, 1114133, 7, 0, 1114143, 3, 0, 1179649, 11, 0, 1179659, 13, 0, 1179667, 10, 0, 1179668, 6, 0, 1179669, 4, 0, 1179679, 0, 0 )
 script = SubResource( 55 )
 
-[node name="Label" type="Label" parent="."]
+[node name="UI Canvas" type="CanvasLayer" parent="."]
+scale = Vector2( 5, 5 )
+transform = Transform2D( 5, 0, 0, 5, 0, 0 )
+
+[node name="Health" type="Label" parent="UI Canvas"]
+anchor_left = 0.117
+anchor_right = 0.117
+margin_top = 1.0
+margin_right = 40.0
+margin_bottom = 15.0
+
+[node name="Score" type="Label" parent="UI Canvas"]
 margin_right = 40.0
 margin_bottom = 14.0
