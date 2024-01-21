@@ -37,3 +37,6 @@ func take_damage():
 
 func die():
 	zombie.queue_free()
+	
+func set_position(spawn_position):
+	zombie.position = spawn_position

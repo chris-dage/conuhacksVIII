@@ -17,4 +17,6 @@ func _on_Bullet_body_entered(body):
 	if body.is_in_group("zombies"):
 		body.get_node("ZombieScript").take_damage()
 		queue_free()
+	elif body.is_in_group("objects"):
+		queue_free()
 
