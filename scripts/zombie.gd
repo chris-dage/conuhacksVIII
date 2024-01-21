@@ -17,13 +17,18 @@ func _ready():
 	
 func _process(delta):
 	move_towards_target()
-	if Input.is_key_pressed(KEY_Y):
-		take_damage()
 
 func move_towards_target():
 	player_position = player.position
-	target_position = (player_position - zombie.position).normalized()
+	var target_vector:Vector2 = player_position - zombie.position
+	target_position = target_vector.normalized()
 	zombie.move_and_collide(target_position)
+
+	if player_position.y < zombie.position.y:
+		get_parent().get_node("AnimatedSprite").animation = "zombieup"
+	elif player_position.y > zombie.position.y:
+		get_parent().get_node("AnimatedSprite").animation = "zombiedown"
+
 	
 func take_damage():
 	health -= 1

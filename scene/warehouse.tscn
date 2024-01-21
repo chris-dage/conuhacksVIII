@@ -1,10 +1,10 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/floortiles/floor_tile_center.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player_movement.gd" type="Script" id=3]
 [ext_resource path="res://scripts/inventory.gd" type="Script" id=4]
-[ext_resource path="res://art/sprites/zombie/zombiefront2.png" type="Texture" id=5]
+[ext_resource path="res://art/sprites/zombie/spritesheets/zombie_down_sheet.png" type="Texture" id=5]
 [ext_resource path="res://scripts/zombie.gd" type="Script" id=6]
 [ext_resource path="res://art/floortiles/floor_tile_rightbottomedge.png" type="Texture" id=7]
 [ext_resource path="res://art/floortiles/floor_tile_leftbottomedge.png" type="Texture" id=8]
@@ -27,6 +27,9 @@
 [ext_resource path="res://art/sprites/player/spritesheets/move_left_sheet.png" type="Texture" id=25]
 [ext_resource path="res://art/sprites/player/spritesheets/move_right_sheet.png" type="Texture" id=26]
 [ext_resource path="res://art/sprites/player/spritesheets/move_up_sheet.png" type="Texture" id=27]
+[ext_resource path="res://art/sprites/zombie/spritesheets/zombie_up_sheet.png" type="Texture" id=28]
+[ext_resource path="res://art/sprites/zombie/spritesheets/zombie_left_sheet.png" type="Texture" id=29]
+[ext_resource path="res://art/sprites/zombie/spritesheets/zombie_right_sheet.png" type="Texture" id=30]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 32, 32, 32 )
@@ -811,6 +814,66 @@ func _ready():
 [sub_resource type="RectangleShape2D" id=56]
 extents = Vector2( 12, 16.5 )
 
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 29 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 30 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 28 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=78]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 74 ), SubResource( 75 ) ],
+"loop": true,
+"name": "zombiedown",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 79 ), SubResource( 80 ) ],
+"loop": true,
+"name": "zombieleft",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "zombieright",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 76 ), SubResource( 77 ) ],
+"loop": true,
+"name": "zombieup",
+"speed": 5.0
+} ]
+
 [node name="Scene" type="Node2D"]
 position = Vector2( 0, 1 )
 
@@ -847,6 +910,7 @@ script = ExtResource( 24 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 61 )
 animation = "moveright"
+frame = 1
 playing = true
 
 [node name="TileMapObjects" type="TileMap" parent="."]
@@ -863,8 +927,10 @@ position = Vector2( 300, 50 )
 position = Vector2( 1, -0.5 )
 shape = SubResource( 56 )
 
-[node name="Sprite" type="Sprite" parent="Zombie"]
-texture = ExtResource( 5 )
-
 [node name="ZombieScript" type="Node" parent="Zombie"]
 script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Zombie"]
+frames = SubResource( 78 )
+animation = "zombieright"
+playing = true
