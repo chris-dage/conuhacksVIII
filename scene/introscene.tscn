@@ -3,7 +3,7 @@
 [ext_resource path="res://art/sprites/player/front_neutral_ak47.png" type="Texture" id=1]
 [ext_resource path="res://scripts/introscene.gd" type="Script" id=2]
 [ext_resource path="res://art/sprites/title/title.png" type="Texture" id=3]
-[ext_resource path="res://art/sprites/title/name.png" type="Texture" id=4]
+[ext_resource path="res://art/name.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade In"
@@ -53,12 +53,14 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -5, 0 )
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = 7.0
-margin_top = -1.0
-margin_right = 1027.0
+margin_left = -16.0
+margin_top = -21.0
+margin_right = 1077.0
 margin_bottom = 599.0
 color = Color( 0, 0, 0, 1 )
 
