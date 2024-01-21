@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://art/floortiles/floor_tile_center.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://art/floortiles/floor_tile_rightedge.png" type="Texture" id=13]
 [ext_resource path="res://art/floortiles/floor_tile_bottomedge.png" type="Texture" id=14]
 [ext_resource path="res://art/floortiles/floor_tile_topleft.png" type="Texture" id=15]
+[ext_resource path="res://scripts/weapon.gd" type="Script" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 32, 32, 32 )
@@ -402,15 +403,18 @@ speed = 3
 [node name="InventoryScript" type="Node" parent="Player"]
 script = ExtResource( 4 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="WeaponScript" type="Node" parent="Player"]
+script = ExtResource( 18 )
+
+[node name="Zombie" type="KinematicBody2D" parent="." groups=["zombies"]]
 position = Vector2( 300, 50 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie"]
 position = Vector2( 1, -0.5 )
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+[node name="Sprite" type="Sprite" parent="Zombie"]
 texture = ExtResource( 5 )
 
-[node name="ZombieScript" type="Node" parent="KinematicBody2D"]
+[node name="ZombieScript" type="Node" parent="Zombie"]
 script = ExtResource( 6 )
